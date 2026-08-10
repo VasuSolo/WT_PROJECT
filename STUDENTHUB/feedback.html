@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+            <h1>StudentHub</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <h2>Student Feedback</h2>
+            <p>
+                We value your feedback. Please share your experience to help us improve StudentHub.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="form-section">
+
+            <h2>Feedback Form</h2>
+
+            <form action="#" method="post">
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="course">Course</label>
+                <input
+                    type="text"
+                    id="course"
+                    name="course"
+                    placeholder="Enter your course"
+                    required
+                >
+
+                <label for="rating">Rate StudentHub</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select Rating</option>
+                    <option>Excellent </option>
+                    <option>Very Good </option>
+                    <option>Good </option>
+                    <option>Average </option>
+                    <option>Poor </option>
+                </select>
+
+                <label for="message">Your Feedback</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your feedback here..."
+                    required></textarea>
+
+                <button type="submit" class="btn">
+                    Submit Feedback
+                </button>
+
+                <button type="clear" class="btn">
+                    Clear Form
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Thank You Message -->
+        <section class="announcement">
+
+            <h2>Thank You!</h2>
+
+            <p>
+                Your valuable feedback helps us improve StudentHub and provide a better experience for all students.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>
