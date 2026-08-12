@@ -7,9 +7,110 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+    function validateForm() {
+
+        let fullname = document.getElementById("fullname").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let college = document.getElementById("college").value.trim();
+        let course = document.getElementById("course").value;
+        let semester = document.getElementById("semester").value;
+        let password = document.getElementById("password").value;
+        let confirm = document.getElementById("confirm").value;
+
+        if (fullname === "") {
+            alert("Please fill out the Full Name field!");
+            document.getElementById("fullname").focus();
+            return false;
+        }
+
+        if (email === "") {
+            alert("Please fill out the Email field!");
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        if (phone === "") {
+            alert("Please fill out the Mobile Number field!");
+            document.getElementById("phone").focus();
+            return false;
+        }
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+            alert("Please enter a valid 10 digit mobile number!");
+            document.getElementById("phone").focus();
+            return false;
+        }
+
+        if (college === "") {
+            alert("Please fill out the College Name field!");
+            document.getElementById("college").focus();
+            return false;
+        }
+
+        if (course === "") {
+            alert("Please select your Course!");
+            document.getElementById("course").focus();
+            return false;
+        }
+
+        if (semester === "") {
+            alert("Please select your Semester!");
+            document.getElementById("semester").focus();
+            return false;
+        }
+
+        if (password === "") {
+            alert("Please enter your Password!");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long!");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            alert("Password must contain at least one uppercase letter!");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        if (!/[0-9]/.test(password)) {
+            alert("Password must contain at least one digit!");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            alert("Password must contain at least one special symbol!");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        if (confirm === "") {
+            alert("Please enter Confirm Password!");
+            document.getElementById("confirm").focus();
+            return false;
+        }
+
+        if (password !== confirm) {
+            alert("Password and Confirm Password do not match!");
+            document.getElementById("confirm").focus();
+            return false;
+        }
+
+        alert("Registration Successful!");
+
+        return true;
+    }
+</script>
+
 <body>
 
-    <!-- Header -->
     <header>
         <div class="logo">
             <h1>StudentHub</h1>
@@ -32,26 +133,29 @@
         </nav>
     </header>
 
-    <!-- Registration Form -->
     <main>
 
         <section class="form-section">
 
             <h2>Student Registration</h2>
 
-            <form action="login.html" method="get">
+            <form action="login.html" method="get" onsubmit="return validateForm();">
 
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                <input type="text" id="fullname" name="fullname"
+                    placeholder="Enter your full name" required>
 
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="email"
+                    placeholder="Enter your email" required>
 
                 <label for="phone">Mobile Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="Enter your mobile number" required>
 
                 <label for="college">College Name</label>
-                <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+                <input type="text" id="college" name="college"
+                    placeholder="Enter your college name" required>
 
                 <label for="course">Course</label>
                 <select id="course" name="course" required>
@@ -78,6 +182,7 @@
                 <label>Gender</label>
 
                 <div class="radio-group">
+
                     <label>
                         <input type="radio" name="gender" value="Male" required>
                         Male
@@ -92,13 +197,16 @@
                         <input type="radio" name="gender" value="Other">
                         Other
                     </label>
+
                 </div>
 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <input type="password" id="password" name="password"
+                    placeholder="Create a password" required>
 
                 <label for="confirm">Confirm Password</label>
-                <input type="password" id="confirm" name="confirm" placeholder="Confirm password" required>
+                <input type="password" id="confirm" name="confirm"
+                    placeholder="Confirm password" required>
 
                 <div class="checkbox-group">
                     <label>
@@ -117,7 +225,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
     </footer>
